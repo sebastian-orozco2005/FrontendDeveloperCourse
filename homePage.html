@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+    <style>
+        :root{
+            --very-light-pink: #777777;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body{
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .cards-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,240px);
+            gap: 26px;
+            place-content: center;
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+        .product-card{
+            width: 240px;
+        }
+        .product-card img{
+            width: 100%;
+            height: 240px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .product-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .product-info p:nth-child(1){
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+        .product-info p:nth-child(2){
+            font-size: var(--sm);
+            color: var(--very-light-pink);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .product-info figure{
+            margin: 0;
+        }
+        .product-info figure img{
+            margin: 0;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+
+        }
+        .menu{
+            display: none;
+        }
+        .logo{
+            width: 120px;
+        }
+        nav{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--very-light-pink);
+            justify-content:space-between ;
+        }
+        .navbar-left{
+            display: flex;
+            align-items: center;
+        }
+        .navbar-left img{
+            padding-left: 12px;
+        }
+        .navbar-left ul{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin-left: 24px;
+        }
+        .navbar-left ul li{
+            margin-right: 4px;
+        }
+        .navbar-left ul li a{
+            text-decoration: none;
+            color: var(--very-light-pink);
+            border: 1px solid var(--white);
+            padding: 8px 18px;
+            border-radius: 12px;
+            transition: 0.4s;
+        }
+        .navbar-left ul li a:hover{
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+        .navbar-right{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-right: 5rem;
+        }
+        .navbar-right li:nth-child(2){
+            display: flex;
+            position: relative;
+        }
+        .navbar-right li:nth-child(1){
+            margin-right: 3rem;
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+        }
+        .navbar-right li:nth-child(1) img{
+            margin-left: 10px;
+            transform: rotate(90deg);
+        }
+        .navbar-right li:nth-child(2) div{
+            background-color: var(--hospital-green);
+            padding: 0;
+            margin: 0;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 15px;
+            bottom: 15px;
+        }
+        @media (max-width: 640px){
+            .cards-container{
+                display: grid;
+                grid-template-columns: repeat(auto-fill,140px);
+                gap: 22px;
+            }
+            .product-card{
+                width: 140px;
+            }
+            .product-card img{
+                width: 100%;
+                height: 140px;
+            }
+            .menu{
+                display: block;
+                padding-left: 15px;
+            }
+
+            .navbar-left ul{
+                display: none;
+            }
+            .navbar-right li:nth-child(1){
+                display: none;
+            }
+            .navbar-right{
+                margin-right: 2rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <img src="icons/icon_menu.svg" alt="" class="menu">
+
+        <div class="navbar-left">
+            <img src="logos/logo_yard_sale.svg" alt="" class="logo">
+            <ul>
+                <li>
+                    <a href="/">All</a>
+                </li>
+                <li>
+                    <a href="/">Clothes</a>
+                </li>
+                <li>
+                    <a href="/">Electronics</a>
+                </li>
+                <li>
+                    <a href="/">Furnitures</a>
+                </li>
+                <li>
+                    <a href="/">Toys</a>
+                </li>
+                <li>
+                    <a href="/">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <li>platzi@example.com
+                <img src="icons/flechita.svg" alt="">
+            </li>
+            
+            <li class="navbar-icon-cart">
+                <img src="icons/icon_shopping_cart.svg" alt="">
+                <div>2</div>
+            </li>
+        </div>
+    </nav>
+    <section class="main_container">
+        <div class="cards-container">
+            <div class="product-card">
+                <img src="https://i.imgur.com/JG6ba3S.jpeg" alt="car">
+                <div class="product-info">
+                    <div>
+                        <p>$5000,00</p>
+                        <p>Car</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/AzIpV8m.jpeg" alt="keyboard">
+                <div class="product-info">
+                    <div>
+                        <p>$250,00</p>
+                        <p>Keyboard</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/Wp46hY6_d.webp?maxwidth=760&fidelity=grand" alt="Headphones">
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Headphones</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/UC1WN6w.jpeg" alt="Television">
+                <div class="product-info">
+                    <div>
+                        <p>$300,00</p>
+                        <p>TV used</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/HbcNAoq.jpeg" alt="Backpack">
+                <div class="product-info">
+                    <div>
+                        <p>$70,00</p>
+                        <p>Backpack</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/JiSuPU2.jpeg" alt="Knife">
+                <div class="product-info">
+                    <div>
+                        <p>$20,00</p>
+                        <p>Knife</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/5v5G2V7.jpeg" alt="parrot">
+                <div class="product-info">
+                    <div>
+                        <p>$250,00</p>
+                        <p>Street Parrot</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/hd5c75E.jpeg" alt="Kit">
+                <div class="product-info">
+                    <div>
+                        <p>$70,00</p>
+                        <p>Kit gamer</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/SFqZyBi.jpeg" alt="mouse">
+                <div class="product-info">
+                    <div>
+                        <p>$50,00</p>
+                        <p>Mouse</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/VWa6saw.jpeg" alt="Pc gamer">
+                <div class="product-info">
+                    <div>
+                        <p>$3800,00</p>
+                        <p>Pc gamer</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/R3LWLTW.jpeg" alt="motorcycle">
+                <div class="product-info">
+                    <div>
+                        <p>$3500,00</p>
+                        <p>Motorcycle</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/hE8qAW1.jpeg" alt="christmas lights">
+                <div class="product-info">
+                    <div>
+                        <p>$18,00</p>
+                        <p>Christmas Lights</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/NdWvJVM.jpeg" alt="table sound">
+                <div class="product-info">
+                    <div>
+                        <p>$100,00</p>
+                        <p>Table Sound</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/vT6OG0T.jpeg" alt="Drums">
+                <div class="product-info">
+                    <div>
+                        <p>$550,00</p>
+                        <p>Drums</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/UfMUphn.jpeg" alt="PS5">
+                <div class="product-info">
+                    <div>
+                        <p>$1200,00</p>
+                        <p>Play station 5</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/JaX1Llf.jpeg" alt="PS4">
+                <div class="product-info">
+                    <div>
+                        <p>$300,00</p>
+                        <p>Play station 4 Militar Edition</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/Oxjls6W.jpeg" alt="Speakers">
+                <div class="product-info">
+                    <div>
+                        <p>$200,00</p>
+                        <p>Speakers</p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/uPI16jr.jpeg" alt="XBOX">
+                <div class="product-info">
+                    <div>
+                        <p>$100,00</p>
+                        <p>Xbox </p>
+                    </div>    
+                    <figure>
+                        <img src="icons/bt_add_to_cart.svg" alt="add to cart">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

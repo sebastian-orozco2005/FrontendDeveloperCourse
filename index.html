@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Emailsent_section</title>
+    <title>Login_Section</title>
     <style>
         :root{
             --very-light-pink: #777777;
@@ -33,7 +33,6 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 300px;
-            justify-items: center;
         }
         .logo{
             width: 150px;
@@ -56,27 +55,35 @@
             margin-top: 0;
             margin-bottom: 35px;
         }
-        .email-image{
-            width: 132px;
-            height: 132px;
-            border-radius: 50%; 
-            background-color: var(--text-input-field);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .email-image img {
-            width: 80px;
-        }
-        .resend{
+        .label{
             font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+            
         }
-        .resend span{
-            color: var(--very-light-pink);
+        .input
+        {
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            width: 100%;
+            margin-bottom: 12px;
         }
-        .resend a{
+
+        .form{
+            display: flex;
+            flex-direction: column;
+        }
+        .form a{
             color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
             text-decoration: none;
+            margin-bottom: 52px;
+            margin-top: 36px;
         }
         .primary-button
         {
@@ -89,34 +96,55 @@
             cursor: pointer;
             font-size: var(--md);
             font-weight: bold;
-            margin-bottom: 30px;
-            margin-top: 30px;
+        }
+        .secondary-button{
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 2px solid var(--hospital-green);
+            color: var(--hospital-green);
+            height: 50px;
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            
+            
+        
         }
         @media (max-width: 640px){
             .logo{
                 display: block;
             }
+            .secondary-button{
+                margin-bottom: 0;
+                margin-top: 300px;
+            }
+
         }
+        
     </style>
+    <script>
+        function redireccionar(){
+            window.location.href = 'CreateAccount.html';
+        }
+    </script>
 </head>
 <body>
     <div class="login">
         <div class="form-container">
             <img src="logos/logo_yard_sale.svg" alt="logo" class="logo">
+        
+            <form action="homePage.html" class="form">
+                <label for="password" class="label">Email Address</label>
+                <input type="email" id="password" placeholder="platzi@example.com" class="input input_password">
+                <br>
+                <label for="new-password" class="label">Password</label>
+                <input type="password" id="new-password" placeholder="************" class="input input_password">
+                <br>
+                <input type="submit" value="Log in" class="primary-button login-button">
+                <a href="password.html">Forgot my passwoord</a>
+            </form>
 
-            <h1 class="title">Email has been sent!</h1>
-            <p class="subtitle">Please check your inbox for instructions on how to reset the password</p>
-            
-            <div class="email-image">
-                <img src="icons/email.svg" alt="email_log">
-            </div>
-
-            <button class="primary-button login-button">Login</button>
-
-            <p class="resend">
-                <span>Didn't receive the email? </span>
-                <a href="/">Resend</a>
-            </p>
+            <button class="secondary-button signup-button" onclick="redireccionar()">Sign up</button>
         </div>
     </div>
 </body>
